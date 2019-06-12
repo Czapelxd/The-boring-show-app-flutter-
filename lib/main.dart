@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const Duration(seconds: 5), //wait 5 sec to pretent that it loading
           );
           setState(() {
-            _articles.removeAt(0);  //delating first iteam from the list
+            _articles.removeAt(0);  //delating first iteam from the list and updating UI
           }); 
         },
         child: ListView(
