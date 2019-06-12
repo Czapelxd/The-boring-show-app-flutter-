@@ -54,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildItem(Article article) {
     return Padding(
+      key: Key(article.text), //uniq key identificator that helps identify witch widget is active
       padding: const EdgeInsets.all(16.0),
       child: ExpansionTile(
         title: new Text(
@@ -69,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 icon: Icon(Icons.launch),
                 color: Colors.green,
                 onPressed: () async {
-                  final fakeUrl = "http://${article.domain}";
+                  final fakeUrl = "http://${article.url}";
                   if (await canLaunch(fakeUrl)) {
                     await launch(fakeUrl);
                   }
